@@ -1,0 +1,9 @@
+com\demo\springcloud\provider\service\impl\DepartmentServiceImpl.class
+com\demo\springcloud\provider\service\DeptService.class
+com\demo\springcloud\provider\controller\DeptController.class
+com\demo\springcloud\provider\controller\DepartmentController.class
+com\demo\springcloud\provider\dao\DeptDao.class
+com\demo\springcloud\provider\mapper\DepartmentMapper.class
+com\demo\springcloud\provider\ProviderApplication.class
+com\demo\springcloud\provider\service\impl\DeptServiceImpl.class
+com\demo\springcloud\provider\service\DepartmentService.class

@@ -1,0 +1,45 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/
+      #defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8003.com:8003/eureka/
+  instance:
+    instance-id: microservice-dept9001
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+    ip-address: 127.0.0.1
+
+spring:
+  application:
+    name: mircroservice-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.11.131:3306/springcloud01?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    dbcp2:
+      max-total: 10
+      min-idle: 5
+      initial-size: 5
+      max-wait-millis: 200
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.demo.springcloud.entity
+
+info:
+  app.name: mircroservice-provider-dept
+  company.name: www.demo.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+

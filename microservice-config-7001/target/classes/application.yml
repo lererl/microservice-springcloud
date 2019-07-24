@@ -1,0 +1,32 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: config-server7001
+    ip-address: 127.0.0.1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/
+spring:
+  application:
+    name: microservicecloud-config-dept-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server7001
+      label: master
+      server:
+        git:
+          uri: https://github.com/dboy2018/microservicecloud-config.git          #GitHub上面的git仓库名字
+
+
+
+info:
+  app.name: config-server
+  company.name: www.demo.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
